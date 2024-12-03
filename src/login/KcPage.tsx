@@ -1,13 +1,13 @@
 import type { ClassKey } from 'keycloakify/login'
-import DefaultPage from 'keycloakify/login/DefaultPage'
 import DefaultTemplate from 'keycloakify/login/Template'
 import { Suspense, lazy } from 'react'
 import type { KcContext } from './KcContext'
 import Template from './Template'
 import { useI18n } from './i18n'
-import Login from './pages/Login'
-import Register from './pages/Register'
 
+const Login = lazy(() => import('./pages/Login'))
+const Register = lazy(() => import('./pages/Register'))
+const DefaultPage = lazy(() => import('keycloakify/login/DefaultPage'))
 const UserProfileFormFields = lazy(() => import('keycloakify/login/UserProfileFormFields'))
 
 export default function KcPage(props: { kcContext: KcContext }) {

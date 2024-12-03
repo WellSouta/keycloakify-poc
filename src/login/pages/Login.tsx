@@ -123,8 +123,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: 'log
                       !realm.loginWithEmailAllowed
                         ? msgStr('username')
                         : !realm.registrationEmailAsUsername
-                        ? msgStr('usernameOrEmail')
-                        : msgStr('email')
+                          ? msgStr('usernameOrEmail')
+                          : msgStr('email')
                     }
                     aria-invalid={messagesPerField.existsError('username', 'password')}
                   />

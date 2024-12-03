@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  /** 10px */
+  font-size: 62.5% !important;
+}
+
+/* Body */
+body.kcBodyClass {
+  @apply bg-[url(./assets/images/background.jpg)] bg-no-repeat bg-center bg-fixed;
+  @apply font-sans antialiased;
+}
+
+/* Header */
+.kcHeaderWrapperClass {
+  @apply flex flex-col items-center gap-8
+    text-center normal-case !important;
+
+  line-height: unset !important;
+
+  /* Logo */
+  span:first-of-type:empty {
+    @apply size-20
+      bg-[url('./assets/images/box.png')] bg-center bg-contain bg-no-repeat !important;
+  }
+
+  /* Title */
+  h1 {
+    @apply m-0
+      font-semibold text-6xl tracking-tighter !important;
+  }
+
+  /* Subtitle */
+  p {
+    @apply m-0
+     text-gray-500/90 text-3xl tracking-tight !important;
+  }
+}
+
+/* Form */
+.kcFormCardClass {
+  @apply bg-transparent border-none shadow-none p-0 !important;
+}
+
+.kcFormHeaderClass {
+  @apply hidden !important;
+}
+
+.kcFormGroupClass {
+  /*  */
+}
+
+/* Forgot password element */
+.kcFormOptionsWrapperClass {
+  @apply m-0 p-0 text-gray-400/90 text-2xl font-sans font-normal !important;
+
+  a {
+    @apply transition-colors;
+    @apply hover:no-underline hover:text-white !important;
+  }
+}
+
+/* Input */
+.kcInputGroup {
+  @apply relative bg-transparent !important;
+}
+
+.kcInputClass {
+  @apply w-full px-6 py-6 rounded-2xl
+    bg-white/5 outline-none border-2 border-solid border-white/15
+    text-white text-2xl font-normal leading-none tracking-normal !important;
+  @apply hover:border-white/50 !important;
+  @apply focus:border-white/50 !important;
+  @apply placeholder:text-white/30 placeholder:transition-colors !important;
+  height: unset !important;
+
+  &:hover,
+  &:focus {
+    @apply placeholder:text-white/50 !important;
+  }
+}
+
+.kcFormPasswordVisibilityButtonClass {
+  @apply absolute right-4 top-2/4 -translate-y-2/4
+    bg-transparent !important;
+
+  @apply after:border-none !important;
+
+  i {
+    @apply text-3xl text-white/40 !important;
+  }
+}
+
+/* Button */
+.kcButtonClass {
+  @apply py-4 rounded-2xl w-full
+    text-3xl text-center font-medium tracking-tighter border-none !important;
+
+  line-height: unset !important;
+
+  &.kcButtonPrimaryClass {
+    @apply bg-white text-black transition-colors !important;
+    @apply hover:bg-gray-300 !important;
+  }
+}
+
+/* Checkbox */
+.checkbox {
+  @apply m-0 !important;
+
+  label {
+    @apply flex items-center gap-4 p-0 !important;
+  }
+
+  input {
+    @apply static bg-transparent outline-none border-none !important;
+    @apply m-0 appearance-none size-6 border border-solid border-white/40 rounded-md cursor-pointer !important;
+
+    &::before {
+      @apply size-6 block -translate-x-0.5 !important;
+      content: '';
+    }
+
+    &:checked {
+      @apply bg-white !important;
+
+      &::before {
+        @apply bg-black !important;
+        clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+      }
+    }
+  }
+
+  span {
+    @apply text-gray-400/90 text-2xl font-sans font-normal transition-colors !important;
+    @apply hover:text-white !important;
+  }
+}
